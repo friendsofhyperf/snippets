@@ -1,0 +1,103 @@
+{
+    "hyperf.Inject.simple": {
+        "prefix": "@Inject",
+        "body": "@Inject",
+    },
+    "hyperf.Inject.require": {
+        "prefix": "@Inject",
+        "body": "@Inject(required=${1|true,false|})",
+    },
+    "hyperf.cacheable": {
+        "prefix": "@Cacheable",
+        "body": "@Cacheable(prefix=\"${1:prefix}\", ttl=${2:60}, value=\"_#${3:{id}}\")"
+    },
+    "hyperf.cachePut": {
+        "prefix": "@CachePut",
+        "body": "@CachePut(prefix=\"${1:prefix}\", ttl=${2:60}, value=\"_#${3:{id}}\")"
+    },
+    "hyperf.CacheEvict": {
+        "prefix": "@CacheEvict",
+        "body": "@CacheEvict(prefix=\"${1:prefix}\", value=\"_#${3:{id}}\")"
+    },
+    "hyperf.Command": {
+        "prefix": "@Command",
+        "body": "@Command"
+    },
+    "hyperf.Listener": {
+        "prefix": "@Listener",
+        "body": "@Listener"
+    },
+    "hyperf.Task": {
+        "prefix": "@Task",
+        "body": "@Task"
+    },
+    "hyperf.Controller": {
+        "prefix": "@Controller",
+        "body": "@Controller(prefix=\"${1:prefix}\")"
+    },
+    "hyperf.AutoController": {
+        "prefix": "@AutoController",
+        "body": "@AutoController(prefix=\"${1:prefix}\")"
+    },
+    "hyperf.RequestMapping": {
+        "prefix": "@RequestMapping",
+        "body": "@RequestMapping(path=\"${1:/}\", methods=\"get,post\")"
+    },
+    "hyperf.GetMapping": {
+        "prefix": "@GetMapping",
+        "body": "@GetMapping(path=\"${1:/}\")"
+    },
+    "hyperf.PostMapping": {
+        "prefix": "@PostMapping",
+        "body": "@PostMapping(path=\"${1:/}\")"
+    },
+    "hyperf.PutMapping": {
+        "prefix": "@PutMapping",
+        "body": "@PutMapping(path=\"${1:/}\")"
+    },
+    "hyperf.PatchMapping": {
+        "prefix": "@PatchMapping",
+        "body": "@PatchMapping(path=\"${1:/}\")"
+    },
+    "hyperf.DeleteMapping": {
+        "prefix": "@DeleteMapping",
+        "body": "@DeleteMapping(path=\"${1:/}\")"
+    },
+    "hyperf.Middlewares": {
+        "prefix": "@Middlewares",
+        "body": [
+            "@Middlewares({",
+            "*    @Middleware(${1}),",
+            "* })",
+        ]
+    },
+    "hyperf.Middleware": {
+        "prefix": "@Middleware",
+        "body": "@Middleware(${1})",
+
+    },
+    "hyperf.Process": {
+        "prefix": "@Process",
+        "body": "@Process(name=\"${1:name}\", nums=\"${2:1}\")"
+    },
+    "hyperf.Value": {
+        "prefix": "@Value",
+        "body": "@Value(\"${1:key}\")"
+    },
+    "hyperf.Constants": {
+        "prefix": "@Constants",
+        "body": "@Constants"
+    },
+    "hyperf.Signal": {
+        "prefix": "@Signal",
+        "body": "@Signal"
+    },
+    "hyperf.Crontab": {
+        "prefix": "@Crontab",
+        "body": "@Crontab(name=\"${1:name}\", rule=\"${2:* * * * *}\", callback=\"${3:execute}\", memo=\"${4:memo}\")"
+    },
+    "hyperf.RpcService": {
+        "prefix": "@RpcService",
+        "body": "@RpcService(name=\"${1:XXXService}\", protocol=\"${2|jsonrpc,jsonrpc-http|}\", server=\"${3|jsonrpc,jsonrpc-http|}\")"
+    }
+}
